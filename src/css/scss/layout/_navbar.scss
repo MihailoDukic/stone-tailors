@@ -1,0 +1,99 @@
+body {
+  font-family: $font;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include flexbox(space-between, center);
+  width: 100%;
+  height: 150px;
+  padding: $desktop-padding;
+  &__logo {
+    width: 60px;
+    height: auto;
+    z-index: 5;
+  }
+
+  &__nav {
+    background-color: $bg-menu;
+    padding: $desktop-padding;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    &__container {
+      @include flexbox(center, start);
+      flex-direction: column;
+      height: 120vh;
+      overflow-y: scroll;
+      &__link {
+        opacity: 0;
+        margin-left: -5rem;
+        font-family: $font-menu;
+        font-size: 8vw;
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid $menu-font-clr;
+        color: $menu-font-clr;
+        text-transform: uppercase;
+        padding-left: 12rem;
+        position: relative;
+        &:before {
+          content: 'THE';
+          font-family: $font;
+          font-size: 4vw;
+          position: absolute;
+          font-weight: lighter;
+          opacity: 0;
+          font-style: italic;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:hover {
+          color: $menu-font-clr-hovered;
+          border-bottom: 1px solid $menu-font-clr-hovered;
+        }
+        &:hover:before {
+          opacity: 1;
+        }
+      }
+      &__link:last-child {
+        &:before {
+          content: '';
+        }
+      }
+
+      &__socialLinks {
+        @include flexbox(space-between, center);
+        width: 100%;
+        height: auto;
+        margin-top: -4rem;
+
+        .link-social {
+          color: $menu-font-clr;
+          margin-right: -1rem;
+          opacity: 0;
+          &:hover {
+            color: $menu-font-clr-hovered;
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle-nav {
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 5;
+  }
+}

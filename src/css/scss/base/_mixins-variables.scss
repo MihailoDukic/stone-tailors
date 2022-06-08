@@ -1,0 +1,15 @@
+$font: 'Cabinet Grotesk', sans-serif;
+$font-menu: 'Author', sans-serif;
+$desktop-padding: 0 8rem;
+$tablet-padding: 0 4rem;
+$mobile-padding: 0 1.5rem;
+$bg-menu: #bfbfbb;
+$menu-font-clr: #8E8E89;
+$menu-font-clr-hovered: #212121;
+$vertical-spacing: 12rem 0rem;
+
+@mixin flexbox($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
